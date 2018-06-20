@@ -3,7 +3,7 @@
 
 JQUERY:
 Tova e biblioteka na JS.
-VKLUCHVA SE TAKA:
+VKLUCHVA SE TAKA:   
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 Ili moje da se iztegli lesno ot neta
 
@@ -18,7 +18,7 @@ MOJEM DA IZPRASHTAME AJAX ZAQVKI KOETO E ZAQVKA KUM SERVER.
 Nehstata se dostupvat s :
 $('li')  -  primerno s li element.
 $('li')[0] ako imame mnogo lita se durji kato masiv, vzimame purviq.
-$('li').css('background','red')  -  taka promenqme css-a.
+$('li').css('background','red')  -  taka promenqme css-a
 
 JQUERY SE POLZVA NAI MNOGO, 85% ot top saitove ZASHTOTO E
 MNOGO LEKA, PO LEKA E OT Angular 1 I SE UCHI MNOGO LESNO.
