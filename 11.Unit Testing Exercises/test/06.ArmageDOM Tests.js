@@ -1,39 +1,11 @@
 
-//TRQBVA DA INSTALIRAME NQKOLKO BIBLIOTEKI ZA DA TESTVAME V HTML KOD
-
-//VAJNOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!!!!!
-//OTVARQME TERMINALA KATO ADMINISTRATOR ZASHTOTO AKO NQMAME PRAVA NISHTO NQMA DA NAPRAVIM 
-//I PISHEM:
-//npm install jsdom -g                     //TOVA E ZA 'jsdom' BIBLIOTEKATA
-//npm install jsdom-global -g                     //TOVA E ZA 'jsdom-global' BIBLIOTEKATA
-
-/*
-    VAJNOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        VSICHKI BIBLIOTEKI GLOBALNO INSTALIRANI SE SUHRANQVAT TUK: 
-        C:\Users\user\AppData\Roaming\npm\node_modules
-        Tam trqbva da imame BIBLIOTEKITE : 
-            01.mocha, 
-            02.chai, 
-            03.jsdom,
-            04.jsdom-global
-
-*/ 
-//Vzimame si expecta
 let expect = require('chai').expect;
 
-//VAJNOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//POSLEDOVATELNOSTTA PRI IZPISVANETO NA SLEDNITE TRI NESHTA E VAJNA
-//PURVO: Tazi biblioteka Pozvolqva ni da si suzdavame virtualen HTML v testovete
-const jsdom = require('jsdom-global');  //Shte mojem da dostupvame HTML-a chrez JQUERY-to
+const jsdom = require('jsdom-global');
 
-//VTORO: Vzimame si Jquery bibliotekata 
-let $ = require('jquery'); 
+let $ = require('jquery');
 
-//NAKRAQ: Vzimam si funkciqta koqto shte testvam
 let nuke = require('../06. ArmageDOM');
-
-
-//S beforeEach si suzdavame HTML predi vseki test
 
 describe("function nuke", function () {
     beforeEach(() => {
@@ -52,19 +24,19 @@ describe("function nuke", function () {
             </div>`
     });
 
-    before(()=>global.$ = $);
+    before(() => global.$ = $);
+    
     it("should do nothing if selectors are equal", function () {
         let beforeNuke = $('body').html();
         nuke('#target', '#target');
         let afterNuke = $('body').html();
         expect(beforeNuke).to.equal(afterNuke);
     });
-
     it("should remove one span for ('.target', 'span')", function () {
         let initialTargetLength = $('.target').length;
         let initialSpanLength = $('span').length;
         let initialSpanTargetLength = $('.target').filter('span').length;
-        if($('.target').filter('span').has('span')){
+        if ($('.target').filter('span').has('span')) {
             initialSpanLength--;
         }
         nuke(".target", "span");
@@ -93,7 +65,7 @@ describe("function nuke", function () {
     });
     it("should return the same html if one parameter is omitted", function () {
         let beforeNuke = $('body').html();
-        nuke("" ,"div");
+        nuke("", "div");
         let afterNuke = $('body').html();
         expect(beforeNuke).to.equal(afterNuke);
     });
@@ -104,4 +76,3 @@ describe("function nuke", function () {
         expect(beforeNuke).to.equal(afterNuke);
     });
 });
-

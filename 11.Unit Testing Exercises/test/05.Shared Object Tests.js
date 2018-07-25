@@ -1,58 +1,25 @@
 
 
-//TRQBVA DA INSTALIRAME NQKOLKO BIBLIOTEKI
-
-//VAJNOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!!!!!
-//OTVARQME TERMINALA KATO ADMINISTRATOR ZASHTOTO AKO NQMAME PRAVA NISHTO NQMA DA NAPRAVIM 
-//I PISHEM:
-//npm install jsdom -g                     //TOVA E ZA 'jsdom' BIBLIOTEKATA
-//npm install jsdom-global -g                     //TOVA E ZA 'jsdom-global' BIBLIOTEKATA
-
-/*
-    VAJNOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        VSICHKI BIBLIOTEKI GLOBALNO INSTALIRANI SE SUHRANQVAT TUK: 
-        C:\Users\user\AppData\Roaming\npm\node_modules
-        Tam trqbva da imame BIBLIOTEKITE : 
-            01.mocha, 
-            02.chai, 
-            03.jsdom,
-            04.jsdom-global
-
-*/ 
-
-//S beforeEach si suzdavame HTML predi vseki test
-
-
-//Vzimame si expecta
 let expect = require('chai').expect;
-
-//VAJNOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//POSLEDOVATELNOSTTA PRI IZPISVANETO NA SLEDNITE TRI NESHTA E VAJNA
-//PURVO: Tazi biblioteka Pozvolqva ni da si suzdavame virtualen HTML v testovete
-let jsdom = require('jsdom-global')();//Shte mojem da dostupvame HTML-a chrez JQUERY-to
-
-//VTORO: Vzimame si Jquery bibliotekata 
+let jsdom = require('jsdom-global')();
 let $ = require('jquery');
-
-//NAKRAQ: Vzimam si funkciqta koqto shte testvam
 let sharedObject = require('../05. Shared Object');
 
-//Pravim si HTML body
 document.body.innerHTML = `<div id="wrapper">
         <input type="text" id="name">
         <input type="text" id="income">
     </div>`;
-    
+
 describe("sharedObject", function () {
-    before(()=>global.$ = $);
-   describe("initially name and income should be null", function () {
-      it("should return null for initial state of name", function () {
-          expect(sharedObject.name).to.be.null;
-      });
-       it("should return null for initial state of income", function () {
-           expect(sharedObject.income).to.be.null;
-       });
-   });
+    before(() => global.$ = $);
+    describe("initially name and income should be null", function () {
+        it("should return null for initial state of name", function () {
+            expect(sharedObject.name).to.be.null;
+        });
+        it("should return null for initial state of income", function () {
+            expect(sharedObject.income).to.be.null;
+        });
+    });
 
     describe("change name function", function () {
         it("should return number for number parameter", function () {

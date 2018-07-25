@@ -1,8 +1,9 @@
 
+let sharedObject = {
 
-  let sharedObject = {
     name: null,
     income: null,
+
     changeName: function (name) {
         if (name.length === 0) {
             return;
@@ -20,7 +21,7 @@
         newIncome.val(this.income);
     },
     updateName: function () {
-        let newName = $('#name').val(); 
+        let newName = $('#name').val();
         if (newName.length === 0) {
             return;
         }
@@ -35,6 +36,4 @@
     }
 };
 
-
 module.exports = sharedObject;
-
