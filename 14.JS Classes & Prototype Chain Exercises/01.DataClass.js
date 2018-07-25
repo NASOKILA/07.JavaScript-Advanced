@@ -1,9 +1,6 @@
 
-
 class Request {
-
-    constructor(method, uri, version, message)
-    {
+    constructor(method, uri, version, message) {
         this.method = method;
         this.uri = uri;
         this.version = version;
@@ -11,15 +8,4 @@ class Request {
         this.response = undefined;
         this.fulfilled = false;
     }
-
 }
-
-
-
-
-
-
-
-
-
-

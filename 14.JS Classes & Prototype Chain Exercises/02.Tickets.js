@@ -12,40 +12,37 @@ function solve(ticketDescription, sortingCriteria) {
     }
 
     for (let ticketArgs of ticketDescription) {
-            
+
         let args = ticketArgs.split('|');
         let destination = args[0];
         let price = args[1];
         let status = args[2];
-    
+
         tickets.push(new Ticket(destination, price, status));
     }
 
-    tickets.sort((a,b) => a[`${sortingCriteria}`] > b[`${sortingCriteria}`]);
-
+    tickets.sort((a, b) => a[`${sortingCriteria}`] > b[`${sortingCriteria}`]);
     return tickets;
 }
 
-
 solve(['Philadelphia|94.20|available',
-'New York City|95.99|available',
-'New York City|95.99|sold',
-'Boston|126.20|departed'],
-'destination');
+    'New York City|95.99|available',
+    'New York City|95.99|sold',
+    'Boston|126.20|departed'],
+    'destination');
 
 console.log();
 
 solve(['Philadelphia|94.20|available',
-'New York City|95.99|available',
-'New York City|95.99|sold',
-'Boston|126.20|departed'],
-'status');
+    'New York City|95.99|available',
+    'New York City|95.99|sold',
+    'Boston|126.20|departed'],
+    'status');
 
 console.log();
 
 solve(['Philadelphia|94.20|available',
-        'New York City|95.99|available',
-        'New York City|95.99|sold',
-        'Boston|126.20|departed'],
-        'price');
-
+    'New York City|95.99|available',
+    'New York City|95.99|sold',
+    'Boston|126.20|departed'],
+    'price');

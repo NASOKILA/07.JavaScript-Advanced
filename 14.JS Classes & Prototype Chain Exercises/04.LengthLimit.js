@@ -1,73 +1,57 @@
-
-
-
-
-
 class Stringer {
-
-    constructor(innerString, innerLength){
-        
+    constructor(innerString, innerLength) {
         this.setInnerLength = innerLength;
         this.setInnerString = innerString;
         this.initialString = innerString;
     }
 
-    get getInnerString(){
+    get getInnerString() {
         return this.innerString;
     }
-    set setInnerString(string){
+    set setInnerString(string) {
         this.innerString = string;
     }
 
-    get getInnerLength(){
+    get getInnerLength() {
         return this.innerLength;
     }
-    set setInnerLength(length){
+    set setInnerLength(length) {
 
-        if(length < 0)
+        if (length < 0)
             this.innerLength = 0;
         else
             this.innerLength = length;
     }
 
-    increase(length){
+    increase(length) {
         this.setInnerLength = (this.getInnerLength + length);
-        
         this.innerString = this.initialString.slice(0, length);
     }
 
-    decrease(length){
+    decrease(length) {
         this.setInnerLength = (this.getInnerLength - length);
-    } 
+    }
 
-    toString()
-    {
+    toString() {
         let stringLength = this.getInnerString.length;
-        if(stringLength > this.getInnerLength)
-        {
+        if (stringLength > this.getInnerLength) {
             let difference = Math.abs(stringLength - this.getInnerLength);
-            this.innerString = this.innerString.slice(0,stringLength - difference);
-            this.innerString  += '...';            
+            this.innerString = this.innerString.slice(0, stringLength - difference);
+            this.innerString += '...';
         }
 
         return this.innerString;
     }
-
 }
 
-
 let test = new Stringer("Test", 5);
-console.log(test.toString()); //Test
+console.log(test.toString());
 
 test.decrease(3);
-console.log(test.toString()); //Te...
-
+console.log(test.toString());
 
 test.decrease(5);
-console.log(test.toString()); //...
-
+console.log(test.toString());
 
 test.increase(4);
-console.log(test.toString()); //Test
-
-
+console.log(test.toString()); 
