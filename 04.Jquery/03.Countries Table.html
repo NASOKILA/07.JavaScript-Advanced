@@ -41,16 +41,13 @@
     </table>
     <script>$(() => initializeTable())</script>
     <script>
-
         function initializeTable() {
 
             $('#createLink').click(addCountry);
 
-            //Add default values :
             createCountry('Bulgaria', 'Sofia');
             createCountry('Germany', 'Berlin');
             createCountry('Russia', 'Moscow');
-
 
             fixLinks();
 
@@ -59,10 +56,8 @@
                 let name = $('#newCountryText').val();
                 let capital = $('#newCapitalText').val();
                 createCountry(name, capital);
-
                 fixLinks();
             }
-
 
             function createCountry(name, capital) {
 
@@ -80,7 +75,6 @@
                 $('#newCountryText').val('');
                 $('#newCapitalText').val('');
 
-
                 let up = document.querySelectorAll('#up');
                 for (let u of up)
                     u.addEventListener('click', MoveUp);
@@ -93,7 +87,6 @@
                 for (let dd of del)
                     dd.addEventListener('click', Delete);
             }
-
 
             function MoveUp(event) {
 
@@ -122,17 +115,14 @@
                 fixLinks();
             }
 
-            //skrivame up linka nai otgore i down linka nai ot dolo
             function fixLinks() {
 
                 $('tr a').show();
                 $('tr:last-child a:contains(Down)').hide();
                 $('tr:eq(2) a:contains(Up)').hide();
             }
-
         }
     </script>
-
 </body>
 
 </html>
