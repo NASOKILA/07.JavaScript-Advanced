@@ -21,26 +21,14 @@ function result() {
         sortedTypes.push([currentType, summary[currentType]]);
     }
 
-    for (let type in sortedTypes.sort((a,b) => b[1] - a[1])) {
-        
+    for (let type in sortedTypes.sort((a, b) => b[1] - a[1])) {
+
         let currentType = sortedTypes[type][0];
         let count = sortedTypes[type][1];
 
         console.log(currentType + ' = ' + count);
     }
-
 }
 
 result('cat', 42, function () { console.log('Hello world!'); });
-
-result({ name: 'bob'}, 3.333, 9.999);
-
-/*
-var expectedOutput = [
-    'object:',
-    'number: 3.333',
-    'number: 9.999',
-    'number = 2',
-    'string = 1'
-];
-*/
+result({ name: 'bob' }, 3.333, 9.999);

@@ -6,7 +6,6 @@ function solve(a, b){
     } else {
         return Math.abs(a);
     }
-
 }
 
 console.log(solve(252, 105));
