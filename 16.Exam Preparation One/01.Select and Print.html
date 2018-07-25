@@ -59,58 +59,43 @@
     </div>
     <div id="output"></div>
     <script>
-        
+
         function move(command) {
 
             if (command === 'left') {
-                //get selected town from selectet towns, remove it 
-                // move it to avaliable towns
-
-                let selectedOptionFromSelectedTowns = $('#selected-towns option:selected').text();    
+                let selectedOptionFromSelectedTowns = $('#selected-towns option:selected').text();
                 let selectedTown = $('#selected-towns option:selected')[0];
                 let allAvaliableOptions = $(`#selected-towns`)[0];
-                
-                if(selectedOptionFromSelectedTowns !== '' && selectedOptionFromSelectedTowns !== undefined
-                    && selectedOptionFromSelectedTowns !== ' ')
-                {
-                        $('#available-towns').append(`<option>${selectedOptionFromSelectedTowns}</option>`)
-                        selectedTown.remove();
+
+                if (selectedOptionFromSelectedTowns !== '' && selectedOptionFromSelectedTowns !== undefined
+                    && selectedOptionFromSelectedTowns !== ' ') {
+                    $('#available-towns').append(`<option>${selectedOptionFromSelectedTowns}</option>`)
+                    selectedTown.remove();
                 }
-            
             }
             else if (command === 'right') {
-                //get selected town from avaliable towns, remove it  
-                // move it to selectet towns
-                let selectedOptionFromAvaliableTowns = $('#available-towns option:selected').text();    
+                let selectedOptionFromAvaliableTowns = $('#available-towns option:selected').text();
                 let selectedTown = $('#available-towns option:selected')[0];
                 let allAvaliableOptions = $(`#available-towns`)[0];
-                
-                if(selectedOptionFromAvaliableTowns !== '' && selectedOptionFromAvaliableTowns !== undefined
-                    && selectedOptionFromAvaliableTowns !== ' ')
-                {
-                        $('#selected-towns').append(`<option>${selectedOptionFromAvaliableTowns}</option>`)
-                        selectedTown.remove();
+
+                if (selectedOptionFromAvaliableTowns !== '' && selectedOptionFromAvaliableTowns !== undefined
+                    && selectedOptionFromAvaliableTowns !== ' ') {
+                    $('#selected-towns').append(`<option>${selectedOptionFromAvaliableTowns}</option>`)
+                    selectedTown.remove();
                 }
-            
             }
             else if (command === 'print') {
-                //get all towns from selected towns 
-                //print them in the div with clas output
 
                 let towns = [];
-                
                 let selectedTowns = $('#selected-towns option').toArray();
-    
+
                 selectedTowns.forEach(t => {
                     towns.push(t.textContent)
                 })
 
-
                 let resultDiv = $('#output');
                 resultDiv.text(towns.join('; '));
-
             }
-
         }
     </script>
 </body>
