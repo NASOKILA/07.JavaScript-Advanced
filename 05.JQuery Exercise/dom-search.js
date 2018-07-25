@@ -1,5 +1,4 @@
 
-
 function domSearch(selector, caseType) {
     let addControls = $('<div>')
         .addClass('add-controls')

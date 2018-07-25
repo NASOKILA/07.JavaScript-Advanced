@@ -1,8 +1,6 @@
 
-
 function validate() {
 
-    //Vzimme si vsichki poleta ot formata
     let username = $('#username');
     let email = $('#email');
     let password = $('#password');
@@ -12,17 +10,13 @@ function validate() {
     let submitBtn = $('#submit');
     let allIsValid = true;
 
-    //Kato kliknem Submit validirame formata
     submitBtn.on('click', function (e) {
-      
-        e.preventDefault();
-        //validirame formata
-        validateForm();
 
+        e.preventDefault();
+        validateForm();
     });
 
-    //pokaji Company Information ili go skrii
-    checkbox.change(function() {
+    checkbox.change(function () {
         this.checked
             ? $('#companyInfo').css('display', 'block')
             : $('#companyInfo').css('display', 'none');
@@ -32,7 +26,6 @@ function validate() {
 
         allIsValid = true;
 
-        //pravim si regexite
         let usernamePattern = /^[a-zA-Z0-9]{3,20}$/gm;
         let emailPattern = /^.*@.*\..*$/g;
         let passwordPattern = /^\w{5,15}$/gm;
@@ -41,51 +34,41 @@ function validate() {
         validateInputWithParrern(username, usernamePattern);
         validateInputWithParrern(email, emailPattern);
 
-
-        if(confirmPassword.val() === password.val()) {
+        if (confirmPassword.val() === password.val()) {
             validateInputWithParrern(password, passwordPattern);
             validateInputWithParrern(confirmPassword, confirmPasswordPattern);
-        }else{
+        } else {
             confirmPassword.css("border", "solid red");
             password.css("border", "solid red");
             allIsValid = false;
         }
 
-        if(checkbox.is(":checked"))
-        {
+        if (checkbox.is(":checked")) {
             let companyNumber = $("#companyNumber").val();
-            if (!companyNumber.match(/^[1-9][0-9]{3}$/)){
+            if (!companyNumber.match(/^[1-9][0-9]{3}$/)) {
                 $("#companyNumber").css('border-color', 'red');
                 allIsValid = false;
-            }
-            else{
+            } else {
                 $("#companyNumber").css('border', 'none');
             }
         }
         else
             allIsValid = false;
 
-        if(allIsValid === true) {
+        if (allIsValid === true) {
             $('#valid').css('display', 'block');
-        }else{
+        } else {
             $('#valid').css('display', 'none');
         }
 
-
         function validateInputWithParrern(input, pattern) {
 
-            if(pattern.test(input.val())) {
+            if (pattern.test(input.val())) {
                 input.css("border", "none");
-            }else {
+            } else {
                 input.css("border", "solid red");
                 allIsValid = false;
             }
         }
     }
 }
-
-
-
-
-
-

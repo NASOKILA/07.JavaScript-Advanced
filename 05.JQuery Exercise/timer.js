@@ -1,5 +1,4 @@
 
-
 function timer() {
 
     let startBtn = $('#start-timer');
@@ -8,47 +7,39 @@ function timer() {
     let seconds = 0;
     let minutes = 0;
     let hours = 0;
-    
-    let  timer;
+
+    let timer;
     let stopped = true;
 
-    startBtn.click(function(){
+    startBtn.click(function () {
 
-        if(stopped)
-        {
+        if (stopped) {
             timer = setInterval(Step, 1000);
             stopped = false;
         }
-        
-        function Step(){
+
+        function Step() {
 
             seconds++;
-    
-            if(seconds === 60)
-            {
+
+            if (seconds === 60) {
                 seconds = 0;
                 minutes++;
             }
-    
-            if(minutes === 60)
-            {
+
+            if (minutes === 60) {
                 minutes = 0;
                 hours++;
             }
-    
+
             $('#hours').text(('0' + hours).slice(-2));
             $('#minutes').text(('0' + minutes).slice(-2));
             $('#seconds').text(('0' + seconds).slice(-2));
-    
         }
-    
-
     });
 
-    stopBtn.click(function(){
+    stopBtn.click(function () {
         clearInterval(timer);
         stopped = true;
     });
-
-
 }

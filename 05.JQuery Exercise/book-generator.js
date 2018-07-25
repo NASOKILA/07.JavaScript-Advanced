@@ -1,21 +1,16 @@
 
-
-
-
-
 function createBook(selector, title, author, ISBN) {
 
     let bookIdCount = document.getElementsByTagName('div').length;
-        
+
     (function bookGenerator() {
 
         let book = $('<div>');
         let currentId = ('book' + bookIdCount.toString());
-        
+
         book.attr('id', currentId);
         book.attr('style', 'border: medium none;');
 
-        //create and attch <p> to the book
         let titleParagraph = $('<p class="title"></p>');
         titleParagraph.text(title);
         book.append(titleParagraph);
@@ -28,16 +23,14 @@ function createBook(selector, title, author, ISBN) {
         isbnParagraph.text(ISBN);
         book.append(isbnParagraph);
 
-
-        //create and attach events to book
         let selectBtn = $(`<button>Select</button>`);
         let deselectBtn = $(`<button>Deselect</button>`);
 
-        selectBtn.click(function(){
-            book.css('border','2px solid blue');
+        selectBtn.click(function () {
+            book.css('border', '2px solid blue');
         });
 
-        deselectBtn.click(function(){
+        deselectBtn.click(function () {
             book.css('border', '');
         });
 
@@ -47,5 +40,4 @@ function createBook(selector, title, author, ISBN) {
         $(selector).append(book);
 
     })();
-
 }
