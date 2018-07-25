@@ -95,41 +95,27 @@
     function addProduct() {
 
       let textInput = document.getElementsByTagName('input')[0];
-      
-
       let passwordInput = document.getElementsByTagName('input')[1];
       let passValue = Number(passwordInput.value);
-      
 
-
-      if (passwordInput.value !== '' && textInput.value !== '' && passValue >= 0 ) {
+      if (passwordInput.value !== '' && textInput.value !== '' && passValue >= 0) {
         let tbody = $('#product-list');
-
 
         let tr = $('<tr>')
           .append($(`<td>${textInput.value}</td>`))
           .append($(`<td>${passValue}</td>`))
 
-
         tbody.append(tr)
-
-
-        //clear input fields
         textInput.value = "";
         passwordInput.value = "";
 
-        //calcuate total
         let total = Number($('tfoot > tr > td')[1].textContent);
-        
+
         total = total + passValue;
-        
-        //console.log(total.toFixed('2').toString());
+
         $('tfoot > tr > td')[1].textContent = total;
-        
+
       }
-
-
-
     }
   </script>
 
