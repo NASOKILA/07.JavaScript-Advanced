@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Sections</title>
@@ -25,29 +26,32 @@
 </head>
 <div id="content">
 </div>
+
 <body onload="create(['Section 1', 'Section 2', 'Section 3', 'Section 4']);">
-<script>
-    function create(sentences) {
+    <script>
+        function create(sentences) {
 
-        for (const sentence of sentences) {
-            
-            let div = document.createElement("div");
-            let p = document.createElement("p");
-            p.textContent = sentence;
-            p.style.display = 'none';
+            for (const sentence of sentences) {
 
-            div.appendChild(p);
-            div.addEventListener('click', display)
+                let div = document.createElement("div");
+                let p = document.createElement("p");
 
-            document.getElementById("content").appendChild(div);
+                p.textContent = sentence;
+                p.style.display = 'none';
+
+                div.appendChild(p);
+                div.addEventListener('click', display)
+
+                document.getElementById("content").appendChild(div);
+            }
+
+            function display(e) {
+                let currentP = e.target.childNodes[0];
+                currentP.style.display = "block";
+            }
+
         }
-
-        function display(e){
-            let currentP = e.target.childNodes[0];
-            currentP.style.display = "block";
-        }
-
-    }
-</script>
+    </script>
 </body>
+
 </html>
