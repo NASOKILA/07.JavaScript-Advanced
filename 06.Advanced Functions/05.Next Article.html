@@ -27,17 +27,13 @@
     <div>
         <button onclick="showNext()">Show Next Article</button>
     </div>
-
     <script>
-
         function getArticleGenerator(articles) {
 
-            //TOVA E NASHIQ CLOSURE KOITO POLZVAME ZA DA SMENQME ARGUMENTITE
             let input = 0;
 
             return function a() {
-                
-                if(input < articles.length)
+                if (input < articles.length)
                     return $('#content').append(`<article>${articles[input++]}</article>`)
             };
         }
@@ -45,10 +41,9 @@
         let articles = [
             "Cats are the most popular pet in the United States: There are 88 million pet cats and 74 million dogs.",
             "A group of cats is called a clowder.",
-            "Cats have over 20 muscles that control their ears." 
+            "Cats have over 20 muscles that control their ears."
         ];
         let showNext = getArticleGenerator(articles);
-        
     </script>
 </body>
 

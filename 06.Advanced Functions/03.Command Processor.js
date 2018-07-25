@@ -1,10 +1,7 @@
 
 function solve(args) {
-    
-    let closure = (function () {
 
-        //tova e dostupno samo za tazi funkciq s.l promenite se otrazqvat na nego 
-        //vseki put kogato se izvika iife-to !!!!!!!!!!!
+    let closure = (function () {
         let str = '';
 
         return function (arr) {
@@ -21,16 +18,12 @@ function solve(args) {
             } else if (command === 'print') {
                 console.log(str);
             }
-
         }
-
     })();
 
-    //podvame vseki parametur na iffie-to
     for (let comm of args) {
         closure(comm);
     }
-
 }
 
 solve(['append hello',
