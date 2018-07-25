@@ -1,9 +1,5 @@
 
-
-
-
 function personAndTeacher() {
-
 
     class Person {
 
@@ -25,52 +21,37 @@ function personAndTeacher() {
         set setEmail(newEmail) {
             this.email = newEmail;
         }
-
     }
-
 
     class Teacher extends Person {
 
         constructor(name, email, subject) {
-
             super(name, email);
-             
             this.setSubject = subject;
         }
 
         get getSubject() {
             return this.subject;
         }
+
         set setSubject(newSubject) {
             this.subject = newSubject;
         }
-
     }
 
-    return {Person, Teacher};
+    return { Person, Teacher };
 }
 
+let classes = personAndTeacher();
+let person = new classes.Person("Atanas", "naso@abv.bg");
 
-// Testvame si programata
+console.log(person.getName);
+console.log(person.getEmail);
 
-    //purvo si vzimame tova koeto vrushta nashata funkciq, tq vrushta obekt s dvata klasa 
-    let classes = personAndTeacher();
+console.log();
 
-    let person = new classes.Person("Atanas", "naso@abv.bg");
-    console.log(person.getName);
-    console.log(person.getEmail);
+let teacher = new classes.Teacher("Asen", "asi@abv.bg", "Design");
 
-    console.log();
-    let teacher = new classes.Teacher("Asen", "asi@abv.bg", "Design");
-    console.log(teacher.getName);
-    console.log(teacher.getEmail);
-    console.log(teacher.getSubject);
-
-
-
-
-
-
-
-
-
+console.log(teacher.getName);
+console.log(teacher.getEmail);
+console.log(teacher.getSubject);
