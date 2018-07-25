@@ -1,19 +1,13 @@
 
-
-
 function solve() {
-    
     class Balloon {
-
         constructor(color, gasWeight) {
             this.color = color;
             this.gasWeight = Number(gasWeight);
         }
-
     }
 
     class PartyBalloon extends Balloon {
-
         constructor(color, gasWeight, ribbonColor, ribbonLength) {
             super(color, gasWeight);
             this.ribbonColor = ribbonColor;
@@ -37,12 +31,10 @@ function solve() {
         }
     }
 
-    return {Balloon, PartyBalloon, BirthdayBalloon};
+    return { Balloon, PartyBalloon, BirthdayBalloon };
 }
-
 
 let classes = solve();
 let test = new classes.BirthdayBalloon("Tumno-bqlo", 20.5, "Svetlo-cherno", 10.25, "Happy Birthday!!!");
 
 console.log(test.ribbonLength);
-

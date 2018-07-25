@@ -1,7 +1,4 @@
 
-
-//Test Classess :
-
 class Keyboard {
     constructor(manufacturer, responseTime) {
         this.manufacturer = manufacturer;
@@ -47,7 +44,6 @@ class Laptop extends Computer {
         this.battery = battery;
     }
 
-
     get battery() {
         return this._battery;
     }
@@ -59,7 +55,6 @@ class Laptop extends Computer {
 
         this._battery = newBattery;
     }
-
 }
 
 class Desktop extends Computer {
@@ -70,7 +65,6 @@ class Desktop extends Computer {
         this.keyboard = keyboard;
         this.monitor = monitor;
     }
-
 
     get keyboard() {
         return this._keyboard;
@@ -95,17 +89,9 @@ class Desktop extends Computer {
 
         this._monitor = newMonitor;
     }
-
 }
 
-
-
-
-
-
-
 function createMixins() {
-
     function computerQualityMixin(classToExtend) {
 
         classToExtend.prototype.getQuality = function () {
@@ -133,13 +119,12 @@ function createMixins() {
 
             let result;
             (keyboardManufacturer === monitordManufacturer
-            && monitordManufacturer === computerManufacturer)
+                && monitordManufacturer === computerManufacturer)
                 ? result = true
                 : result = false
-                
+
             return result;
         }
-
 
         classToExtend.prototype.isClassy = function () {
 
@@ -149,7 +134,6 @@ function createMixins() {
 
             return (batteryLessThanThree && weightLesThanThree && colorCheck);
         }
-
     }
 
     return {
@@ -159,37 +143,3 @@ function createMixins() {
 }
 
 let result = createMixins();
-
-
-/*
-result.computerQualityMixin(Laptop);
-
-let laptop = new Laptop('ASER', 5, 10, 50, 100, 'Black', new Battery('ASUS', 356)); 
-
-console.log(laptop.getQuality());
-
-console.log(laptop.isFast());
-
-console.log(laptop.isRoomy());
-*/
-
-
-//styleMixin test
-/*
-result.styleMixin(Desktop);
-
-let keyboard = new Keyboard('Lenovo', 1);
-let monitor = new Monitor('Lenovo', 50, 90);
-let desktop = new Desktop('Lenovo', 5, 10, 50, keyboard, monitor);
-
-console.log(desktop.isFullSet());
-
-*/
-
-/*
-result.styleMixin(Laptop);
-
-let laptop = new Laptop('ASER', 5, 10, 50, 2, 'Black', new Battery('ASUS', 356)); 
-
-console.log(laptop.isClassy());
-*/

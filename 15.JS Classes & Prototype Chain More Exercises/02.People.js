@@ -1,11 +1,7 @@
 
-
 function solve() {
-
     class Employee {
-
         constructor(name, age) {
-            //abstract
             if (new.target === Employee)
                 throw new Error("Cannot instantiate directly.");
 
@@ -20,7 +16,6 @@ function solve() {
         }
 
         work() {
-
             let currentTask = this.tasks.shift();
             console.log(this.name + currentTask);
             this.tasks.push(currentTask);
@@ -34,7 +29,7 @@ function solve() {
 
     class Junior extends Employee {
         constructor(name, age) {
-            super(name, age);   
+            super(name, age);
             this.tasks.push(` is working on a simple task.`);
         }
     }
@@ -61,11 +56,10 @@ function solve() {
         }
     }
 
-    return {Employee, Junior, Senior, Manager}
+    return { Employee, Junior, Senior, Manager }
 }
 
 let result = solve();
 var guy1 = new result.Junior('Peter', 27);
 guy1.salary = 1200;
 guy1.collectSalary();
-
