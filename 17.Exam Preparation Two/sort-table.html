@@ -80,11 +80,8 @@
     </table>
 
     <script>
-        
         function sort(colIndex, descending) {
-         
             if (colIndex === 1) {
-
                 let helperArr = [];
                 $('tr').not(':first').each((i, e) => {
                     helperArr.push({ 'name': e.children[0].textContent, 'price': Number(e.children[1].textContent) })
@@ -100,28 +97,27 @@
                 });
             }
             else {
-
                 let map = new Map();
                 $('tr').not(':first').each((i, e) => {
                     map.set(e.children[0].textContent, Number(e.children[1].textContent));
                 });
-                
+
                 descending
                     ? [...map] = [...map].sort((a, b) => {
-                        if(a[0] < b[0]) 
+                        if (a[0] < b[0])
                             return 1;
-                        if(a[0] > b[0]) 
+                        if (a[0] > b[0])
                             return -1;
                         return 0;
                     })
                     : [...map] = [...map].sort((a, b) => {
-                        if(a[0] < b[0]) 
+                        if (a[0] < b[0])
                             return -1;
-                        if(a[0] > b[0]) 
+                        if (a[0] > b[0])
                             return 1;
                         return 0;
                     });
-                
+
                 $('tr').not(':first').each((i, e) => {
                     e.children[0].textContent = [...map][i][0];
                     e.children[1].textContent = [...map][i][1].toFixed(2);
@@ -129,7 +125,6 @@
             }
         }
     </script>
-
 </body>
 
 </html>
