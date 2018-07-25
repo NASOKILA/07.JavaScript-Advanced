@@ -1,8 +1,5 @@
 
-
-
 function solve(input) {
-
 
     let array = [];
 
@@ -25,7 +22,7 @@ function solve(input) {
         else {
 
             let [command, name] = tokens;
-            
+
             command === "add"
                 ? commands.Add(name)
                 : commands.Remove(name);
@@ -33,9 +30,9 @@ function solve(input) {
     }
 }
 
-//solve(['add hello', 'add again', 'remove hello', 'add again', 'print']);
+solve(['add hello', 'add again', 'remove hello', 'add again', 'print']);
 
-//solve(['add pesho', 'add gosho', 'add pesho', 'remove pesho', 'print']);
+solve(['add pesho', 'add gosho', 'add pesho', 'remove pesho', 'print']);
 
 solve([
     'add JSFundamentals',
@@ -44,4 +41,3 @@ solve([
     'print',
     'add JSApplications',
     'print']);
-

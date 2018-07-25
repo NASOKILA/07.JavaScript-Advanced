@@ -1,20 +1,20 @@
 
-
 let solve = (function () {
 
     let objects = [];
 
     function createObject(name) {
-        let obj = {name:name};
+        let obj = { name: name };
         objects.push(obj);
     }
 
     function printObject(name) {
+
         let objToPrint = objects.find(o => o.name === name);
 
         let properties = [];
-        for(let property in objToPrint) {
-            if(property !== 'name')
+        for (let property in objToPrint) {
+            if (property !== 'name')
                 properties.push(`${property}:${objToPrint[property]}`);
         }
 
@@ -36,17 +36,17 @@ let solve = (function () {
 
     return function (input) {
 
-        for(let row of input) {
+        for (let row of input) {
             let elements = row.split(' ');
-            
-            if(elements[0] === 'create' && elements.length === 2) {
+
+            if (elements[0] === 'create' && elements.length === 2) {
                 createObject(elements[1])
-            }else if(elements[0] === 'print'){
+            } else if (elements[0] === 'print') {
                 printObject(elements[1]);
-            }else if(elements[0] === 'create' && elements.length === 4){
+            } else if (elements[0] === 'create' && elements.length === 4) {
                 inheritAnObject(elements[1], elements[3]);
-            }else{
-                changeProperty(elements[1],elements[2],elements[3]);
+            } else {
+                changeProperty(elements[1], elements[2], elements[3]);
             }
         }
     }
@@ -59,10 +59,3 @@ solve(['create c1',
     'print c1',
     'print c2']
 );
-
-
-
-
-
-
-

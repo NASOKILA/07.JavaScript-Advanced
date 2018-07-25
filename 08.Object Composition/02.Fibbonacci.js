@@ -8,7 +8,7 @@ function fibonacci() {
 
     return function () {
 
-        if(firstTime){
+        if (firstTime) {
             firstTime = false;
             return 1;
         }
@@ -17,24 +17,13 @@ function fibonacci() {
         prevNum = nextNum;
         nextNum = fibNum;
         return (fibNum);
-         
+
     }
 }
+
 let fib = fibonacci();
 
 console.log(fib());
 console.log(fib());
 console.log(fib());
 console.log(fib());
-
-
-
-
-
-
-
-
-
-
-
-

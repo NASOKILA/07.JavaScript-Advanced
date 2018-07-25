@@ -2,10 +2,10 @@
 function solve(args) {
 
     let objects = {};
+
     for (const i in args) {
 
         let tokens = args[i].split(' ');
-
         let command = tokens[0];
         let objName = tokens[1];
 
@@ -24,14 +24,15 @@ function solve(args) {
 
             let attribute = tokens[2];
             let value = tokens[3];
-
             let currentObj = objects[objName];
+
             currentObj[attribute] = value;
 
         } else if (command === 'print') {
 
             let allProperties = [];
             let printObject = objects[objName];
+
             for (let propName in printObject) {
                 if (propName.toString() !== 'name') {
                     allProperties.push(propName + ':' + printObject[propName]);
@@ -39,16 +40,9 @@ function solve(args) {
             }
 
             console.log(allProperties.join(', '));
-
         }
-
-
     }
-
-
 }
-
-
 
 solve(['create c1',
     'create c2 inherit c1',
@@ -57,5 +51,3 @@ solve(['create c1',
     'print c1',
     'print c2']
 );
-
-
