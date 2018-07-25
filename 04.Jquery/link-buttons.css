@@ -10,7 +10,7 @@ a.button {
 }
 
 a.button.selected {
-    color: #111;
+    color: #111; 
     font-weight: bold;
     border: 1px solid #AAA;
     background: #BBB;
