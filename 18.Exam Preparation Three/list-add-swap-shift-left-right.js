@@ -1,8 +1,8 @@
 
-
-
 function createList() {
+
     let data = [];
+
     return {
         add: function (item) {
             data.push(item)
@@ -41,8 +41,8 @@ list.add(1);
 list.add(2);
 list.add(3);
 list.add(4);
-list.swap(3,1);
-console.log(`list = [${list}]`);
+list.swap(3, 1);
 
+console.log(`list = [${list}]`);
 
 module.exports = createList;

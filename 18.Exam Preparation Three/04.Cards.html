@@ -25,7 +25,6 @@
     <div id="main"></div>
     <script>
         function cardDeckBuilder(selector) {
-            // TODO: return the card builder
 
             let cardFaces = {
                 '2': '2',
@@ -44,21 +43,20 @@
             };
 
             let cardSuits =
-                {
-                    'C': '\u2663',
-                    'D': '\u2666',
-                    'H': '\u2665',
-                    'S': '\u2660'
-                }
+            {
+                'C': '\u2663',
+                'D': '\u2666',
+                'H': '\u2665',
+                'S': '\u2660'
+            }
 
-            return  {
+            return {
 
                 'cardFaces': cardFaces,
                 'cardSuits': cardSuits,
                 addCard: function (face, suit) {
                     let cardDiv = $(`<div class="card">${this.cardFaces[face]} ${this.cardSuits[suit]}</div>`)
 
-                    //attach click event to the card
                     cardDiv.click(this.reverseCard);
 
                     $(selector).append(cardDiv);

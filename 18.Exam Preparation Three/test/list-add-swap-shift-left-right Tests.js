@@ -1,25 +1,9 @@
 
-
-
 let expect = require('chai').expect;
 
 let createList = require('../list-add-swap-shift-left-right');
 
 console.log(createList);
-
-
-
-//add: go znaem
-// 1 5 7
-//shift left:  =  5 7 1     shift right: = 7 1 5     AKO RAZMERA NA MASIVA E > 1
-
-//swap: 
-//Ako index1:    NE e nomer ILI  e < 0 ILI e > DULJINATA NA MASIVA  VRUSTA 'false' ILI e = na index2.
-//Ako index2:    NE e nomer ILI  e < 0 ILI e > DULJINATA NA MASIVA  VRUSTA 'false' ILI e = na index1.
-//inache in razmenq mestata i vrushta 'true'.
-
-//toString() vrushta masiva joinnata sus ', ' !!!
-
 
 describe("Create List Mocha Tests", function () {
 
@@ -31,7 +15,6 @@ describe("Create List Mocha Tests", function () {
 
         expect(`list = [${list}]`).to.be.equal("list = [1, two, 3]");
     });
-
 
     it("shuld return: list = [two, 3, 1]", function () {
         let list = createList();
@@ -51,7 +34,6 @@ describe("Create List Mocha Tests", function () {
         list.add(["four"]);
         expect(`list = [${list}]`).to.be.equal("list = [two, 3, 1, four]");
     });
-
 
     it("shuld return: list = [four, two, 3, 1]", function () {
         let list = createList();
@@ -87,7 +69,6 @@ describe("Create List Mocha Tests", function () {
         expect(`list = [${list}]`).to.be.equal("list = [1, two, 3, four]");
     });
 
-
     it("shuld return: Swaping [1] and [1]: false", function () {
         let list = createList();
         list.add(1);
@@ -111,7 +92,6 @@ describe("Create List Mocha Tests", function () {
         list.swap(3, 0)
         expect(`Swaping [1] and [1]: ${list.swap(1, 1)}`).to.be.equal("Swaping [1] and [1]: false");
     });
-
 
     it("shuld return: list = [1, two, 3, four]", function () {
         let list = createList();
@@ -222,7 +202,7 @@ describe("Create List Mocha Tests", function () {
         //list.swap(1,1)
         expect(`list = [${list}]`).to.be.equal("list = [Four, Two, Three, One]");
     });
-    
+
     it("shuld return: list = [1, 4, 3, 2]", function () {
         let list = createList();
         list.add("One");
@@ -250,7 +230,7 @@ describe("Create List Mocha Tests", function () {
         list.swap(1, 4);
         expect(`list = [${list}]`).to.be.equal("list = [One, Two, Three, Four]");
     });
-    
+
     it("shuld return: list = [1, 4, 3, 2]", function () {
         let list = createList();
         list.add("One");
@@ -268,7 +248,7 @@ describe("Create List Mocha Tests", function () {
         list.add("Four");
         list.swap(1, 1);
         expect(`list = [${list}]`).to.be.equal("list = [One, Two, Three, Four]");
-    });it("shuld return: list = [One, One]", function () {
+    }); it("shuld return: list = [One, One]", function () {
         let list = createList();
         list.add("One");
         list.add("One");
@@ -285,7 +265,7 @@ describe("Create List Mocha Tests", function () {
         list.swap(-3, -0);
         expect(`list = [${list}]`).to.be.equal("list = [1, 2, 3, 4]");
     });
-    
+
     it("shuld return: list = [1, 4, 3, 2]", function () {
         let list = createList();
         list.add(1);
@@ -295,7 +275,6 @@ describe("Create List Mocha Tests", function () {
         list.swap(5, 5);
         expect(`list = [${list}]`).to.be.equal("list = [1, 2, 3, 4]");
     });
-    
 
     it("shuld return: list = [1, 4, 3, 2]", function () {
         let list = createList();
@@ -306,7 +285,7 @@ describe("Create List Mocha Tests", function () {
         list.swap(5, -0);
         expect(`list = [${list}]`).to.be.equal("list = [1, 2, 3, 4]");
     });
-    
+
     it("shuld return: list = [1, 4, 3, 2]", function () {
         let list = createList();
         list.add(1);
@@ -316,7 +295,7 @@ describe("Create List Mocha Tests", function () {
         list.swap(-5, 5);
         expect(`list = [${list}]`).to.be.equal("list = [1, 2, 3, 4]");
     });
-    
+
     it("shuld return: list = []", function () {
         let list = createList();
         list.swap(1, 2);
@@ -381,8 +360,6 @@ describe("Create List Mocha Tests", function () {
     });
 
 
-
-    
     it("shuld return: list = [1, 4, 3, 2]", function () {
         let list = createList();
         list.add(1);
@@ -437,7 +414,6 @@ describe("Create List Mocha Tests", function () {
         list.swap(5, NaN);
         expect(`list = [${list}]`).to.be.equal("list = [1, 2, 3, 4]");
     });
-
     it("shuld return: list = [1, 4, 3, 2]", function () {
         let list = createList();
         list.add(1);
@@ -447,7 +423,6 @@ describe("Create List Mocha Tests", function () {
         list.swap(1.1, 2.5);
         expect(`list = [${list}]`).to.be.equal("list = [1, 2, 3, 4]");
     });
-    
     it("shuld return: list = [1, 4, 3, 2]", function () {
         let list = createList();
         list.add(1);
@@ -458,7 +433,7 @@ describe("Create List Mocha Tests", function () {
         expect(`list = [${list}]`).to.be.equal("list = [1, 2, 3, 4]");
     });
 
-    
+
     it("shuld return: list = [1, 4, 3, 2]", function () {
         let list = createList();
         list.add(1);
@@ -477,7 +452,6 @@ describe("Create List Mocha Tests", function () {
         list.swap(3, 1);
         expect(`list = [${list.toString()}]`).to.be.equal("list = [1, 4, 3, 2]");
     });
-
     it("shuld return: list = [1, 4, 3, 2]", function () {
         let list = createList();
         list.add(1);
@@ -497,7 +471,6 @@ describe("Create List Mocha Tests", function () {
         expect(output).to.be.true;
         expect(`list = [${list.toString()}]`).to.be.equal("list = [1, 4, 3, 2]");
     });
-//Ako nqkoi ot indexite ne sushtestvuvat
     it("shuld return: list = [1, 4, 3, 2]", function () {
         let list = createList();
         list.add(1);
@@ -507,7 +480,6 @@ describe("Create List Mocha Tests", function () {
         list.swap(5);
         expect(`list = [${list}]`).to.be.equal("list = [1, 2, 3, 4]");
     });
-
     it("shuld return: list = [1, 4, 3, 2]", function () {
         let list = createList();
         list.add(1);
@@ -519,7 +491,6 @@ describe("Create List Mocha Tests", function () {
     });
 
 
-    //Check if funcktions exist
     it('Should return true', function () {
         let list = createList();
         expect(list.hasOwnProperty('add')).to.be.true;
@@ -542,15 +513,3 @@ describe("Create List Mocha Tests", function () {
     })
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
