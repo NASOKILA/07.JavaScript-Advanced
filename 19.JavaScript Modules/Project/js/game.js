@@ -1,18 +1,16 @@
 let game = function () {
 
-    // private members
     let factorElement = document.getElementById('factor');
-    let problemsPerGame = 3; // set default value
+    let problemsPerGame = 3;
 
     function printGame() {
 
         player.logPlayer();
 
-        // determine the number of problems to show
         setProblemCount(document.getElementById('problemCount').value);
 
-        // create the html for the current game
         let gameForm = '';
+
         for (let i = 1; i <= problemsPerGame; i++) {
             gameForm += `<div class="form-group">`;
             gameForm += `<label for="answer${i}" class="col-sm-2 control-label">`;
@@ -21,11 +19,8 @@ let game = function () {
             gameForm += `</div>`;
         }
 
-        // add the new game to the page
         let gameElement = document.getElementById('game');
         gameElement.innerHTML = gameForm;
-
-        // enable the calculate score button
         document.getElementById('calculate').removeAttribute('disabled');
     }
 
@@ -34,15 +29,13 @@ let game = function () {
         let problemsInGame = getProblemCount();
         let score = 0;
 
-        // loop trough the text boxes and calculate the number that are correct
         for (let i = 1; i <= problemsInGame; i++) {
             let answer = document.getElementById(`answer${i}`).value;
-            if(i * factorElement.value == answer) {
+            if (i * factorElement.value == answer) {
                 score++;
             }
         }
 
-        //create a new result object to pass to the scoreboard
         let result = {
             name: player.getName(),
             score: score,
@@ -50,11 +43,8 @@ let game = function () {
             factor: factorElement.value
         };
 
-        // add the result and update the scoreboard
         scoreboard.addResult(result);
         scoreboard.updateScoreboard();
-
-        // disable calculate score button
         document.getElementById('calculate').setAttribute('disabled', 'true');
     }
 
@@ -66,7 +56,6 @@ let game = function () {
         return problemsPerGame;
     }
 
-    // public members
     return {
         printGame: printGame,
         calculateScore: calculateScore,

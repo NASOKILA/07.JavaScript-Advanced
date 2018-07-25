@@ -1,28 +1,14 @@
 
-
-
 let Entity = require('./Entity');
 
-class Dog extends Entity
-{
-    constructor(name)
-    {
+class Dog extends Entity {
+    constructor(name) {
         super(name);
     }
 
-    saySomething()
-    {
+    saySomething() {
         return `${this.name} barks!`;
     }
-
 }
 
-/*
-let dog = new Dog('gafy');
-console.log(dog.saySomething());
-*/
-
 module.exports = Dog;
-
-
-

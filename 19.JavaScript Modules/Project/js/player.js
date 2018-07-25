@@ -1,6 +1,5 @@
 let player = function () {
 
-    // private members
     let playerName = '';
 
     function logPlayer() {

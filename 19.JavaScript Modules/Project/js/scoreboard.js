@@ -1,6 +1,5 @@
 let scoreboard = function () {
 
-    // private members
     let results = [];
 
     function addResult(newResult) {
@@ -11,17 +10,14 @@ let scoreboard = function () {
 
         let output = `<h2>Scoreboard</h2>`;
 
-        // loop over all results and create the html for the scoreboard
         for (let result of results) {
             output += `<h4>${result.name}: ${result.score}/${result.problems} for factor ${result.factor}</h4>`
         }
 
-        // add the updated scoreboard to the page
         let scoresElement = document.getElementById('scores');
         scoresElement.innerHTML = output;
     }
 
-    // return public members
     return {
         addResult: addResult,
         updateScoreboard: updateScoreboard
