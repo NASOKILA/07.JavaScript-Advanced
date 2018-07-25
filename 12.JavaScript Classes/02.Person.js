@@ -1,62 +1,48 @@
 
-class Person
-{
-
+class Person {
     constructor(firstName, lastName, age, email) {
 
-        //izvikva se konstrukra
         this.setFirstName = firstName;
         this.setLastName = lastName;
         this.setAge = age;
         this.setEmail = email;
     }
 
-    //vrushta propertito
-    get getFirstName(){
+    get getFirstName() {
         return this.firstName;
     }
-    //setva propertito na podadenoto v konstruktura
-    set setFirstName(fName){
-        //validacii
+
+    set setFirstName(fName) {
         return this.firstName = fName;
     }
-    
-    get getLastName(){
+
+    get getLastName() {
         return this.lastName;
     }
-    set setLastName(lName){
-        //validacii
+    set setLastName(lName) {
         this.lastName = lName;
     }
 
-    get getAge(){
+    get getAge() {
         return this.age;
     }
-    set setAge(Age){
-        //validacii
+
+    set setAge(Age) {
         return this.age = Age;
     }
-    
-    get getEmail(){
+
+    get getEmail() {
         return this.email;
     }
-    set setEmail(Email){
-        //validacii
+    set setEmail(Email) {
         this.email = Email;
     }
 
-    toString(){
+    toString() {
         return `${this.getFirstName} ${this.getLastName} (age: ${this.getAge}, email: ${this.getEmail})`;
     }
-
 }
 
 let person = new Person('Maria', 'Petrova', 22, 'mp@yahoo.com');
 
-
 console.log(person.toString());
-
-
-
-
-

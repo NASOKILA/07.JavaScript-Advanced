@@ -1,17 +1,16 @@
 
 function getPeople() {
 
+    class Person {
 
-    class Person{
-
-        constructor(firstName, lastName, age, email){
+        constructor(firstName, lastName, age, email) {
             this.firstName = firstName;
             this.lastName = lastName;
             this.age = age;
             this.email = email;
         }
 
-        toString(){
+        toString() {
             return `${this.firstName} ${this.lastName} (age: ${this.age}, email: ${this.email})`;
         }
     }
@@ -22,9 +21,6 @@ function getPeople() {
         new Person('Stephan', 'Nikolov', 25),
         new Person('Peter', 'Kolev', 24, 'ptr@gmail.com'),
     ];
-    
 }
 
 console.log(getPeople().join('\n'));
-
-
